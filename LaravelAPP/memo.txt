@@ -1,5 +1,5 @@
 #開発メモ
-・git clonse https://github.com/yasigawa/LaravelAPP.git
+・git clone https://github.com/yasigawa/LaravelAPP.git
 https://github.com/yasigawa/AppLaravel.git
 ・コマンド
 
