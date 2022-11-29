@@ -1,0 +1,146 @@
+#開発メモ
+・git clonse https://github.com/yasigawa/LaravelAPP.git
+https://github.com/yasigawa/AppLaravel.git
+・コマンド
+
+https://qiita.com/sano1202/items/6021856b70e4f8d3dc3d
+composer create-project laravel/laravel LaravelAPP
+
+mysql -u ユーザー名 -D データベース名 -p
+mysql -u homestead -D homestead -p
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=homestead
+DB_USERNAME=homestead
+DB_PASSWORD=secret
+
+
+CREATE USER 'ユーザ名'@'ホスト名' IDENTIFIED BY 'パスワード';
+
+CREATE DATABASE homestead;
+CREATE USER 'homestead'@'localhost' IDENTIFIED BY 'secret';
+#CREATE USER 'homestead'@'homestead' IDENTIFIED BY 'secret';
+GRANT ALL PRIVILEGES ON * . * TO 'homestead'@'localhost';
+#GRANT ALL PRIVILEGES ON * . * TO 'homestead'@'homestead';
+#DROP USER 'homestead'@'homestead';
+DROP USER 'homestead'@'localhost';
+(データベースユーザー作成)
+mysql> CREATE USER dbuser@localhost IDENTIFIED BY 'dbpassword';
+(データベースに対するユーザーのアクセス権限付与)
+mysql> GRANT ALL PRIVILEGES ON dbname.* TO dbuser@'localhost';
+
+migrate:resetコマンドを使用します。
+migrate:rollback
+php artisan migrate:rollback
+php artisan migrate:reset;
+x
+php artisan make:model Book
+php artisan make:seeder BooksTableSeeder
+php artisan db:seed
+
+#バリデーション
+php artisan make:request BookRequest
+
+♯スタート
+php artisan serve --host=localhost --port=8000
+
+git remote add origin https://github.com/yasigawa/LaravelAPP.git
+git clone https://github.com/yasigawa/LaravelAPP.git
+
+composer update
+
+git commit -m "leravel add"
+git push origin master
+
+git使い方メモ
+[ 開発者 ] 作業対象のソースを clone または pull します。
+[ 開発者 ] 作業用のブランチを作成します。
+[ 開発者 ] 機能追加、改修といった開発作業を行います。
+[ 開発者 ] 作業が完了したら push します。
+[ 開発者 ] プルリクエストを作成します。
+[ レビュー・マージ担当者 ] 通知されたプルリクエストから変更を確認しレビューします。
+[ レビュー・マージ担当者 ] レビュー結果を判断し、必要ならば開発者にフィードバックします。
+[ レビュー・マージ担当者 ] レビューの結果、問題がない場合はマージします。
+[ レビュー・マージ担当者 ] レビューの結果、対応自体が不要となるなど、プルリクエスト自体が必要ない場合はクローズします。
+
+git config --global user.name "ysigawa2"
+git config --global user.email "ysigawa2@gmail.com"
+
+###########################################
+Gitでbranchを切ろうとしたら「fatal: Not a valid object name: 'master'.」とエラーが出たときの対処法
+fatal: Not a valid object name: 'master'.
+　masterが有効なオブジェクトじゃない。
+ $git add . 
+ $git commit -a
+ $git log
+
+#
+ソースコードをcloneした後に、ローカルでサーバーを立ち上げてページアクセスすると画面に「500 | SERVER ERROR」が表示。
+
+[2022-11-20 08:44:49] production.ERROR: No application encryption key has been specified. {"exception":"[object] (Illuminate\\Encryption\\MissingAppKeyException(code: 0): No application encryption key has been specified. at C:\\laravel\\php6\\LaravelAPP\\vendor\\laravel\\framework\\src\\Illuminate\\Encryption\\EncryptionServiceProvider.php:79)
+[stacktrace]
+
+暗号化キーの確認
+php artisan key:generate
+
+#githubメモ
+git clone
+git checkout main
+
+git branch xxxx
+git checkout xxxx
+開発する
+git add xxx.xxx
+git commit -m "CCCCC"
+
+git push origin xxx
+
+GitHub プルリクエスト
+
+git checkout main
+git pull origin main
+git branch -d xxx
+git push --delete origin xxx
+
+1.1 ログイン機能の有効化
+cd ~/html/laravel/PROJECT_NAME
+php artisan make:auth
+   ERROR  Command "make:auth" is not defined. Did you mean one of these?
+
+composer require laravel/ui --dev
+php artisan ui vue --auth
+npm install
+npm run dev
+
+
+#Userテーブル作成
+php artisan migrate
+
+php artisan clear-compiled
+php artisan optimize
+php artisan view:clear
+
+#Laravel Jetstream
+composer require laravel/jetstream
+php artisan jetstream:install livewire --teams
+npm install
+npm run dev
+php artisan migrate
+http://localhost:5173/
+
+php artisan make:middleware EnsureTokenIsValid
+
+#Laravel Jetstream
+composer require laravel/jetstream
+php artisan jetstream:install livewire
+php artisan jetstream:install inertia
+npm install
+npm run build
+php artisan migrate
+
+kana.yamada@example.com
+password
+
+kana2.yamada@example.com
+password
